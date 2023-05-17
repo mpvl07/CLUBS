@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        /* Style for the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+select {
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Style for the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for the count */
+p {
+  margin-bottom: 10px;
+}
+
+    </style>
+</head>
+<body>
+<div class="mb-10">
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top navbar-dark navbar-expand-sm shadow-lg">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">
+                <img src="nit-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                NIT AP CLUBS
+            </a>
+            <a class="navbar-brand d-none" href="#">HOME</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" aria-current="page" href="/good">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" aria-current="page" href="/eventRegisters">Registrations</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link active" aria-current="page" href="/galleryform">Gallery Form</a>
+                    </li>
+
+
+                </ul>
+                <div class="ml-3">
+                    <button class="btn btn-outline-warning btn" onclick="window.location.href='/'">
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+    <form method="GET" action="/eventRegisters">
+        <label for="clubname">Event Name:</label>
+        <!-- <select id="clubname" name="clubname">
+            <option value="">All</option>
+            <% for (let i=0; i < eventRegisters.length; i++) { %>
+                <option value="<%= eventRegisters[i].title %>">
+                    <%= eventRegisters[i].title %>
+                </option>
+                <% } %>
+        </select> -->
+        <select class="mt-5" id="title" name="title">
+            <option value="">All</option>
+            <% const eventNames=Array.from(new Set(eventRegisters.map(event=> event.title))); %>
+                <% for (let i=0; i < eventNames.length; i++) { %>
+                    <option value="<%= eventNames[i] %>">
+                        <%= eventNames[i] %>
+                    </option>
+                    <% } %>
+        </select>
+
+        <button class="mt-1" type="submit">Search</button>
+    </form>
+    <p>Number of registrations: <%= count %>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Roll Number</th>
+                <th>Year</th>
+                <th>Branch</th>
+                <th>Section</th>
+                <th>Club</th>
+                <th>Event</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=0; i < eventRegisters.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= eventRegisters[i].name %>
+                    </td>
+                    <td>
+                        <%= eventRegisters[i].email %>
+                    </td>
+                    <td>
+                        <%= eventRegisters[i].rollno %>
+                    </td>
+                    <td>
+                        <%= eventRegisters[i].year %>
+                    </td>
+                    <td>
+                        <%= eventRegisters[i].branch %>
+                    </td>
+                    <td>
+                        <%= eventRegisters[i].section %>
+                    </td>
+                    <td>
+                        <%= eventRegisters[i].clubname %>
+                    </td>
+                    <td>
+                        <%= eventRegisters[i].title %>
+                    </td>
+                   
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</body>
+</html>

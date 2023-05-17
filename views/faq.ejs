@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #E3F2FD;
+        }
+
+        .accordion {
+            max-width: 530px;
+            width: 100%;
+            background: #FFF;
+            margin: 0 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .accordion .accordion-content {
+            margin: 10px 0;
+            border-radius: 4px;
+            background: #FFF7F0;
+            border: 1px solid #FFD6B3;
+            overflow: hidden;
+        }
+
+        .accordion-content:nth-child(2) {
+            background-color: #F0FAFF;
+            border-color: #CCEEFF;
+        }
+
+        .accordion-content:nth-child(3) {
+            background-color: #FFF0F3;
+            border-color: #FFCCD6;
+        }
+
+        .accordion-content:nth-child(4) {
+            background-color: #F0F0FF;
+            border-color: #CCCCFF;
+        }
+
+        .accordion-content.open {
+            padding-bottom: 10px;
+        }
+
+        .accordion-content header {
+            display: flex;
+            min-height: 50px;
+            padding: 0 15px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s linear;
+        }
+
+        .accordion-content.open header {
+            min-height: 35px;
+        }
+
+        .accordion-content header .title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .accordion-content header i {
+            font-size: 15px;
+            color: #333;
+        }
+
+        .accordion-content .description {
+            height: 0;
+            font-size: 12px;
+            color: #333;
+            font-weight: 400;
+            padding: 0 15px;
+            transition: all 0.2s linear;
+        }
+    </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <!-- =====Fontawesome CDN Link===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <title>FAQ</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+        <div class="mb-10">
+            <nav class="navbar navbar-expand-lg bg-dark fixed-top navbar-dark navbar-expand-sm shadow-lg">
+                <div class="container-fluid">
+        
+                    <a class="navbar-brand" href="#">
+                        <img src="nit-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                        NIT AP CLUBS
+                    </a>
+                    <a class="navbar-brand d-none" href="#">HOME</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav justify-content-end">
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" aria-current="page" href="/index">Home</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" aria-current="page" href="/faqs">FAQ'S</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" aria-current="page" href="/gallery">Gallery</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" aria-current="page" href="/clubs">Clubs</a>
+                            </li>
+                            <li class="nav-item mx-2">
+                                <a class="nav-link active" aria-current="page" href="/events">Events</a>
+                            </li>
+                        </ul>
+                        <div class="ml-3">
+                            <button class="btn btn-outline-warning btn" onclick="window.location.href='/google'">
+                                Admin Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+                    <i class="fa-sharp fa-solid fa-square-question"></i>
+               <div class="primary"><center>FAQ(Frequently Asked Questions)</center></div>    
+    <div class="accordion">
+        <div class="accordion-content">
+            <header>
+                <span class="title">Why one need to join the clubs?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+            Joining clubs allows you to meet new people who share your interests and passions, develop new skills, and build
+            a sense
+            of community within your school or organization.
+            </p>
+        </div>
+
+        <div class="accordion-content">
+            <header>
+                <span class="title">Can I join more than 3 clubs, is there any limit for the clubs?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+        While there may not be a specific limit, it's important to prioritize your commitments. Joining a few niche clubs
+        that
+        align with your interests will allow you to make the most of your experience and develop meaningful connections.
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">Can I start my own club at college?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+        Yes, students can start their own club if it's not yet found, you will typically need to find a
+        faculty advisor and follow guidelines or procedures outlined by our NIT Andhra Pradesh.
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">How much time should I dedicate to my club involvement ?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+
+            <p class="description">
+            It depends on your personal goals and commitments, but it's important to balance your involvement in clubs with
+            your academic and personal responsibilities. Try to find a few niche clubs that align with your interests and passions, and
+            commit to those clubs fully.
+            </p>
+        </div>
+        <div class="accordion-content">
+            <header>
+                <span class="title">How can I find clubs that align with my interests?</span>
+                <i class="fa-solid fa-plus"></i>
+            </header>
+        
+            <p class="description">
+            One way to find clubs is to attend club fairs or events hosted by your school or organization. Additionally, you
+            can
+            check online directories or social media platforms to discover new clubs that match your interests.
+            </p>
+        </div>
+    </div>
+
+    <script>const accordionContent = document.querySelectorAll(".accordion-content");
+
+        accordionContent.forEach((item, index) => {
+            let header = item.querySelector("header");
+            header.addEventListener("click", () => {
+                item.classList.toggle("open");
+
+                let description = item.querySelector(".description");
+                if (item.classList.contains("open")) {
+                    description.style.height = `${description.scrollHeight}px`; //scrollHeight property returns the height of an element including padding , but excluding borders, scrollbar or margin
+                    item.querySelector("i").classList.replace("fa-plus", "fa-minus");
+                } else {
+                    description.style.height = "0px";
+                    item.querySelector("i").classList.replace("fa-minus", "fa-plus");
+                }
+                removeOpen(index); //calling the funtion and also passing the index number of the clicked header
+            })
+        })
+
+        function removeOpen(index1) {
+            accordionContent.forEach((item2, index2) => {
+                if (index1 != index2) {
+                    item2.classList.remove("open");
+
+                    let des = item2.querySelector(".description");
+                    des.style.height = "0px";
+                    item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
+                }
+            })
+        }</script>
+</body>
+
+</html>
